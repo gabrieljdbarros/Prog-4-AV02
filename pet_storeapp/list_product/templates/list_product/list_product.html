@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Produtos - Pet Store{% endblock %}
+{% block body_class %}lista-pet{% endblock %}
+
+{% block content %}
+    <h2>Produtos Disponíveis</h2>
+    <div class="row">
+        {% for produto in produtos %}
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{ produto.imagem }}" class="card-img-top" alt="{{ produto.nome }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ produto.nome }}</h5>
+                        <p class="card-text">{{ produto.descricao }}</p>
+                        <p><strong>Preço: R$ {{ produto.preco }}</strong></p>
+                        <a href="{% url 'product_detail' produto.id %}" class="btn btn-primary">Ver Detalhes</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

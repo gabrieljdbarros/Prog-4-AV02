@@ -1,0 +1,188 @@
+
+.navbar {
+    background: linear-gradient(to right, #4dca4d, #77da6e);
+    color: white;
+    position: relative;
+    padding: 10px 20px;
+    z-index: 1000; 
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('https://images.unsplash.com/photo-1612690119274-8819a81c13a2?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmV1dHJhbCUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    background-color: #ffffff;
+    padding: 20px;
+    width: 100%;
+}
+header{
+    color: white;
+}
+footer {
+    background-color: #343a40;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+}
+
+
+.font {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+.home-pet main {
+    background-image: url('https://shop.hamsystems.eu/cdn/shop/articles/ideal-room-temperatures-for-pets-151493_e24f453f-4fda-4616-8a35-81305a53fe55.png?v=1738247956');
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed; 
+    height: 100vh; 
+    color: white; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 100;
+    color-scheme: 777.333;
+}
+
+.home-pet::before {
+    content: ''; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit; 
+    background-size: inherit;
+    background-position: inherit;
+    background-attachment: inherit;
+    filter: blur(12px); 
+    z-index: -1; 
+}
+
+.home-pet .jumbotron {
+    background-color: #ffffff; 
+    color: rgb(0, 0, 0); 
+    padding: 40px;  
+    border-radius: 10px;  
+}
+
+
+.home-pet .jumbotron .btn {
+    background-color: #77da6e; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 18px;
+    border-radius: 5px; 
+}
+
+.home-pet .jumbotron .btn:hover {
+    background-color: #93cf93; 
+}
+
+.lista-pet{ 
+        flex: 1; 
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(to right, #ebe0dd, #777);
+        width: 100%;
+
+}
+.lista-pet img {
+    width: 100%; 
+    height: 300px; 
+    margin-bottom: 15px; 
+}
+.lista-pet .btn{
+    background-color: #77da6e; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 18px;
+    border-radius: 5px; 
+}
+.lista-pet .btn:hover {
+    background-color: #93cf93; 
+}
+
+.produto-pet {
+    flex: 1; 
+    text-align: center;
+    background: linear-gradient(to right, #ebe0dd, #777);
+    width: 100%;
+
+}
+.produto-pet img {
+    width: auto; 
+    height: auto;
+    margin-bottom: 15px; 
+}
+.produto-pet .btn{
+    background-color: #77da6e; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 18px;
+    border-radius: 5px; 
+}
+.produto-pet .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position:relative;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to right, #4dca4d, #77da6e);
+    color: white;
+}
+
+.produto-pet .header-container h2 {
+    margin: 0;
+    font-size: 36px;
+    text-align: right;
+    flex: 1;
+}
+
+.produto-pet .header-container .product-description {
+    flex: 2;
+    text-align: left;
+    padding: 10px;
+}
+
+.product-image-container {
+    margin-top: 20px;
+}
+
+.product-description {
+    margin-bottom: 20px;
+}
+
+.product-description p {
+    font-size: 18px;
+}

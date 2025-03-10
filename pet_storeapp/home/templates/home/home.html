@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Home - Pet Store{% endblock %}
+{% block body_class %}home-pet{% endblock %}
+
+{% block content %}
+    <div class="jumbotron text-center">
+        <h2>Bem-vindo à Pet Store!</h2>
+        <p>Encontre tudo o que você precisa para o seu pet!</p>
+        <a href="{% url 'list_product' %}" class="btn btn-primary">Ver Produtos</a>
+    </div>
+{% endblock %}
