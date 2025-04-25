@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Minhas Reservas{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Minhas Reservas</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            {% if agendamentos %}
+                <ul class="list-group shadow-sm">
+                    {% for a in agendamentos %}
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div>
+                                <div class="fw-bold">{{ a.servico.nome }}</div>
+                                {{ a.data_agendada }} às {{ a.horario }}<br>
+                                <small>Observações: {{ a.observacoes }}</small>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="text-center">Você ainda não possui reservas.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

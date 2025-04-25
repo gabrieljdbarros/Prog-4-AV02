@@ -2,53 +2,65 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Store Genérica</title>
+    <title>{% block title %}Pet Store{% endblock %}</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {% load static %}
+    
 
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        body {
+            background-color: #f9f9f9;
+        }
+        .navbar-brand {
+            font-weight: bold;
+        }
+        .navbar-custom {
+      background-color: #28a745; /* verde Bootstrap ou troque por #2ecc71, #1abc9c etc */
+  }
+        footer {
+            margin-top: 4rem;
+            padding: 1rem 0;
+            background-color: #eee;
+            text-align: center;
+        }
+    </style>
 </head>
-<body>
-    <body class="{% block body_class %}{% endblock %}">
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Pet Store</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'home' %}">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'list_product' %}">Produtos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'product_detail' 1 %}">Detalhes</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    
-        <main>
-            {% block content %}
-            {% endblock %}
-        </main>
-    
-        <footer>
-            <div class="bg-light text-center py-3">
-                &copy; 2025 Pet Store Genérica - Alguns direitos reservados
-            </div>
-        </footer>
-    </body>
+<body class="{% block body_class %}{% endblock %}">
 
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom shadow-sm">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'list_product' %}"> Pet Store Genérica</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="{% url 'list_product' %}">Produtos</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'lista_servicos' %}">Serviços</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'minhas_reservas' %}">Reservas</a></li>
+              {% if user.is_authenticated %}
+                <li class="nav-item"><a class="nav-link text-danger" href="{% url 'logout' %}">Sair</a></li>
+              {% else %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <main class="container py-4">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; {{ year|default:2025 }} Pet Store. Alguns os direitos reservados.</p>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -39,9 +39,7 @@ main {
     padding: 20px;
     width: 100%;
 }
-header{
-    color: white;
-}
+
 footer {
     background-color: #343a40;
     color: rgb(0, 0, 0);
@@ -62,12 +60,7 @@ footer {
     background-position: center;
     background-attachment: fixed; 
     height: 100vh; 
-    color: white; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 100;
-    color-scheme: 777.333;
+   
 }
 
 .home-pet::before {

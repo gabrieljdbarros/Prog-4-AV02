@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Bem-vindo à Pet Store{% endblock %}
+{% block content %}
+<div class="="container mt-5 text-center">
+    <h1 class="mb-4"> Bem-vindo à Pet Store!</h1>
+    <p class="lead">Aqui você encontra os melhores produtos e serviços para seu pet.</p>
+    <a href="{% url 'list_product' %}" class="btn btn-primary mt-3">Ver Produtos</a>
+    <a href="{% url 'lista_servicos' %}" class="btn btn-primary mt-3">Serviços</a>
+</div>
+{% endblock %}

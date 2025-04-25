@@ -1,0 +1,24 @@
+
+# Ambiente virtual
+venvpet/
+
+# Arquivos compilados Python
+*.pyc
+__pycache__/
+
+# Banco de dados local
+*.sqlite3
+
+# Arquivos de mídia
+/media/
+
+# Arquivos de configuração locais
+*.env
+
+# Pastas de IDEs
+.vscode/
+.idea/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db

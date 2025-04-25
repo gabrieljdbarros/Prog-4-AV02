@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Agendar {{ servico.nome }}{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Agendar Serviço: {{ servico.nome }}</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="post" class="card p-4 shadow-sm">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label class="form-label">Data</label>
+                    <input type="date" name="data_agendada" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Horário</label>
+                    <input type="time" name="horario" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Observações</label>
+                    <textarea name="observacoes" class="form-control" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success w-100">Confirmar Agendamento</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

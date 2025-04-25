@@ -1,14 +1,13 @@
-
 from django.contrib import admin
-from django.urls import path
-from home.views import home_view
-from list_product.views import list_product
-from product_detail.views import product_detail
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+import debug_toolbar
 
 urlpatterns = [
+    path('', include('produtos.urls')),
     path('admin/', admin.site.urls),
-    path('home/', home_view, name="home"),
-    path('list_product/', list_product, name="list_product"),
-    path('product_detail/<int:produto_id>/', product_detail, name="product_detail"),
-      
+    path('__debug__/', include(debug_toolbar.urls)),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
