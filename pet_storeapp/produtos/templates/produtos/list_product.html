@@ -15,6 +15,7 @@
                         <p class="card-text">{{ produto.descricao }}</p>
                         <p><strong>Preço: R$ {{ produto.preco }}</strong></p>
                         <a href="{% url 'product_detail' produto.id %}" class="btn btn-primary">Ver Detalhes</a>
+                        <a href="{% url 'add_produto_carrinho' produto.id %}" class="btn btn-outline-success">Adicionar ao Carrinho</a>
                     </div>
                 </div>
             </div>

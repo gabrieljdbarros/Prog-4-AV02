@@ -12,6 +12,7 @@
                     <h3 class="card-title">{{ produto.nome }}</h3>
                     <p class="card-text">{{ produto.descricao }}</p>
                     <p class="fs-5"><strong>Preço:</strong> R$ {{ produto.preco }}</p>
+                    <a href="{% url 'add_produto_carrinho' produto.id %}" class="btn btn-outline-success">Adicionar ao Carrinho</a>
                     <a href="{% url 'list_product' %}" class="btn btn-outline-secondary mt-3">← Voltar para produtos</a>
                 </div>
             </div>

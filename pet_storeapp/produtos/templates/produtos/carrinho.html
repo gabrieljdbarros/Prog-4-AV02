@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}Carrinho{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Meu Carrinho</h2>
+
+{% if not carrinho.produtos and not carrinho.servicos %}
+    <p>Seu carrinho está vazio.</p>
+{% else %}
+
+    {% if carrinho.produtos %}
+        <h4>Produtos</h4>
+        <ul class="list-group mb-4">
+            {% for id, item in carrinho.produtos.items %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ item.nome }} (x{{ item.quantidade }}) - R$ {{ item.preco|floatformat:2 }}
+                    <a href="{% url 'remover_item_carrinho' id 'produtos' %}" class="btn btn-sm btn-danger">Remover</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if carrinho.servicos %}
+        <h4>Serviços</h4>
+        <ul class="list-group">
+            {% for id, item in carrinho.servicos.items %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ item.nome }} - R$ {{ item.preco|floatformat:2 }}
+                    <a href="{% url 'remover_item_carrinho' id 'servicos' %}" class="btn btn-sm btn-danger">Remover</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if carrinho.produtos or carrinho.servicos %}
+    <div class="text-end mt-4">
+        <h5>Total: R$ {{ total|floatformat:2 }}</h5>
+        <a href="#" class="btn btn-success btn-lg mt-2">Finalizar Pedido</a>
+    </div>
+{% endif %}
+
+{% endif %}
+{% endblock %}

@@ -1,4 +1,4 @@
-
+from .models import Servico, Agendamento
 from django.contrib import admin
 from .models import Produto, Categoria
 
@@ -12,9 +12,6 @@ class ProdutoAdmin(admin.ModelAdmin):
 class CategoriaAdmin(admin.ModelAdmin):
     list_display = ('nome',)
 
-
-
-from .models import Servico, Agendamento
 
 @admin.register(Servico)
 class ServicoAdmin(admin.ModelAdmin):

@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
+{% load form_filters %}
+
 {% block title %}Login{% endblock %}
+
 {% block content %}
 <div class="container mt-5">
     <h2 class="text-center mb-4">Entrar no Sistema</h2>
@@ -7,16 +10,25 @@
         <div class="col-md-6">
             <form method="post" class="card p-4 shadow-sm">
                 {% csrf_token %}
+
+                {% if form.non_field_errors %}
+                    <div class="alert alert-danger">
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
+
                 <div class="mb-3">
-                    <label for="username" class="form-label">Usuário</label>
-                    <input type="text" name="username" class="form-control" required>
+                    <label for="id_username" class="form-label">Usuário</label>
+                    {{ form.username|add_class:"form-control" }}
                 </div>
                 <div class="mb-3">
-                    <label for="password" class="form-label">Senha</label>
-                    <input type="password" name="password" class="form-control" required>
+                    <label for="id_password" class="form-label">Senha</label>
+                    {{ form.password|add_class:"form-control" }}
                 </div>
+
                 <button type="submit" class="btn btn-primary w-100">Entrar</button>
             </form>
+
             <div class="text-center mt-3">
                 <p>Não tem conta? <a href="{% url 'cadastro' %}">Cadastre-se</a></p>
             </div>
